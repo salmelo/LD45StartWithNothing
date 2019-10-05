@@ -6,15 +6,21 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
+    public Swinger leftHand, rightHand;
+    public HandItem testItem1, testItem2;
 
     private Vector2 move;
     private Vector2 toMove;
 
     private Rigidbody2D rb;
+    private MatchTransform leftItem, rightItem;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        leftItem = testItem1.SpawnItem(leftHand.transform);
+        rightItem = testItem2.SpawnItem(rightHand.transform);
     }
 
     private void OnMove(InputValue value)
@@ -42,6 +48,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnRightAction()
     {
-        GetComponentInChildren<Swinger>().DoSwing(.5f, 360, 360, 1);
+        testItem2.DoSwing(rightHand);
+    }
+
+    private void OnLeftAction()
+    {
+        testItem1.DoSwing(leftHand);
     }
 }

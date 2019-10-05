@@ -20,7 +20,7 @@ public class MatchTransform : MonoBehaviour
             if (rb)
             {
                 rb.MovePosition(target.position);
-                rb.SetRotation(target.rotation);
+                rb.MoveRotation(target.rotation);
             }
             else
             {
