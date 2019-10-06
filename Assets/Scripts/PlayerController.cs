@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private MatchTransform leftItemObj, rightItemObj;
 
     private HandItem leftItem, rightItem;
+    private Vector3 startPosition;
 
     public static PlayerController current { get; private set; }
 
@@ -66,6 +67,8 @@ public class PlayerController : MonoBehaviour
 
         //GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
         //GetComponent<PlayerInput>().enabled = false;
+
+        startPosition = transform.position;
     }
 
     private void OnMove(InputValue value)
@@ -98,11 +101,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnLeftAction()
+    private void OnLeftAction(InputValue value)
     {
         if (LeftItem)
         {
             LeftItem.DoSwing(leftHand);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            transform.position = startPosition;
         }
     }
 }
