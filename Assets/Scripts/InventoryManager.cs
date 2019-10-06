@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -8,22 +9,23 @@ public class InventoryManager : MonoBehaviour
 {
     public List<RoomGem> gems;
     public List<HandItem> items;
+
     public UnityEngine.InputSystem.InputActionAsset playerActions, uIActions;
     public GemButton gemButtonPrefab;
     public Transform gemButtonPanel;
 
-    public static InventoryManager instance;
+    public static InventoryManager current { get; private set; }
 
     private System.Action<RoomGem> pickGemCallback;
 
     private void Awake()
     {
-        instance = this;
+        current = this;
     }
 
     private void Start()
     {
-        uIActions.FindAction("Cancel").performed += UICancelPerformed; 
+        uIActions.FindAction("Cancel").performed += UICancelPerformed;
 
         uIActions.Disable();
     }
@@ -82,5 +84,21 @@ public class InventoryManager : MonoBehaviour
         uIActions.Disable();
 
         return true;
+    }
+
+    public void GetItem(HandItem item)
+    {
+        items.Add(item);
+
+        //fill item menu
+
+        if (PlayerController.current.RightItem == null)
+        {
+            PlayerController.current.RightItem = item;
+        }
+        else if (PlayerController.current.LeftItem == null)
+        {
+            PlayerController.current.LeftItem = item;
+        }
     }
 }

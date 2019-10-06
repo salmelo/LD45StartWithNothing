@@ -7,20 +7,61 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5;
     public Swinger leftHand, rightHand;
-    public HandItem testItem1, testItem2;
 
     private Vector2 move;
     private Vector2 toMove;
 
     private Rigidbody2D rb;
-    private MatchTransform leftItem, rightItem;
+    private MatchTransform leftItemObj, rightItemObj;
+
+    private HandItem leftItem, rightItem;
+
+    public static PlayerController current { get; private set; }
+
+    public HandItem LeftItem
+    {
+        get => leftItem;
+        set
+        {
+            if (leftItem != value)
+            {
+                SetHandItem(value, leftHand, ref leftItemObj, ref leftItem);
+            }
+        }
+    }
+    public HandItem RightItem
+    {
+        get => rightItem;
+        set
+        {
+            if (rightItem != value)
+            {
+                SetHandItem(value, rightHand, ref rightItemObj, ref rightItem);
+            }
+        }
+    }
+
+    private void SetHandItem(HandItem item, Swinger hand, ref MatchTransform obj, ref HandItem slot)
+    {
+        if (obj)
+        {
+            Destroy(obj.gameObject);
+        }
+        obj = item.SpawnItem(hand.transform);
+        slot = item;
+    }
+
+    private void Awake()
+    {
+        current = this;
+    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
-        leftItem = testItem1.SpawnItem(leftHand.transform);
-        rightItem = testItem2.SpawnItem(rightHand.transform);
+        //leftItem = testItem1.SpawnItem(leftHand.transform);
+        //rightItem = testItem2.SpawnItem(rightHand.transform);
 
 
         //GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
@@ -51,11 +92,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnRightAction()
     {
-        testItem2.DoSwing(rightHand);
+        RightItem.DoSwing(rightHand);
     }
 
     private void OnLeftAction()
     {
-        testItem1.DoSwing(leftHand);
+        LeftItem.DoSwing(leftHand);
     }
 }

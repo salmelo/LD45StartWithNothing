@@ -8,10 +8,10 @@ public class GemObject : MonoBehaviour
 
     public void Pickup()
     {
-        InventoryManager.instance.GetGem(gem);
+        InventoryManager.current.GetGem(gem);
         Destroy(gameObject);
     }
-    
+
     [ContextMenu("Color sprite")]
     private void ColorSprite()
     {
@@ -22,5 +22,13 @@ public class GemObject : MonoBehaviour
     private bool CanColor()
     {
         return gem;
+    }
+
+    private void OnValidate()
+    {
+        if (gem)
+        {
+            GetComponent<SpriteRenderer>().color = gem.color;
+        }
     }
 }

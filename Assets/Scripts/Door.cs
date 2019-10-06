@@ -22,7 +22,7 @@ public class Door: MonoBehaviour
             }
             else
             {
-                InventoryManager.instance.PickGem(OpenDoor);
+                InventoryManager.current.PickGem(OpenDoor);
             }
         }
     }

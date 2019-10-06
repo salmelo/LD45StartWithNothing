@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b71d7703c475041972dfaedb2b5378, type: 3}
-  m_Name: Empty
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  color: {r: 0.9996939, g: 0, b: 1, a: 1}
-  roomPrefab: {fileID: 1315016303, guid: 5df9d44512a9aa0429d76e70927a2de0, type: 3}
+  color: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
+  roomPrefab: {fileID: 3059497242371838765, guid: 0e4043bb90730254093c3f9bc6ef03d8,
+    type: 3}

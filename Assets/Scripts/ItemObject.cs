@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class ItemObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public HandItem item;
+    
+    public void Pickup()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        InventoryManager.current.GetItem(item);
+        Destroy(gameObject);
     }
 }

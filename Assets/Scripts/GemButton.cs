@@ -15,7 +15,7 @@ public class GemButton: MonoBehaviour
 
     public void ChooseGem()
     {
-        if (InventoryManager.instance.ChooseGem(gem))
+        if (InventoryManager.current.ChooseGem(gem))
         {
             Destroy(gameObject);
         }
