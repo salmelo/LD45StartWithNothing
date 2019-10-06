@@ -38,7 +38,6 @@ public class PlayerController : MonoBehaviour
         Vector2 target = rb.position += toMove;
         if (toMove != Vector2.zero)
         {
-            Debug.Log(Mathf.Atan2(toMove.y, toMove.x));
             rb.SetRotation(Mathf.Atan2(-toMove.x, toMove.y) * Mathf.Rad2Deg);
             rb.MovePosition(target);
         }
