@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3753173006909663652}
   - component: {fileID: 3753173006909663649}
   - component: {fileID: 3753173006909663648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RoomGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

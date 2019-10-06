@@ -90,13 +90,19 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnRightAction()
+    private void OnRightAction(InputValue value)
     {
-        RightItem.DoSwing(rightHand);
+        if (RightItem)
+        {
+            RightItem.DoSwing(rightHand);
+        }
     }
 
     private void OnLeftAction()
     {
-        LeftItem.DoSwing(leftHand);
+        if (LeftItem)
+        {
+            LeftItem.DoSwing(leftHand);
+        }
     }
 }

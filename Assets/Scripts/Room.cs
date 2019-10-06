@@ -5,6 +5,7 @@ public class Room : MonoBehaviour
 {
     public MapManager map;
     public Door northDoor, eastDoor, southDoor, westDoor;
+    public Transform center;
 
     public void OnDoorOpened(Door door)
     {

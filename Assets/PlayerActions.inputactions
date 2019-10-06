@@ -23,7 +23,7 @@
                 },
                 {
                     "name": "RightAction",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "4c2acc01-4dbf-4011-abcc-b279d90a65d6",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -31,9 +31,9 @@
                 },
                 {
                     "name": "LeftAction",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "68d2d365-a49c-4b51-8bdc-a55967926f97",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 }
