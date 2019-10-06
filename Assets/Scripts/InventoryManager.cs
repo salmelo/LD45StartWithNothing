@@ -23,7 +23,23 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        
+        uIActions.FindAction("Cancel").performed += UICancelPerformed; 
+
+        uIActions.Disable();
+    }
+
+    private void UICancelPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (pickGemCallback != null)
+        {
+            pickGemCallback(null);
+            pickGemCallback = null;
+        }
+
+        EventSystem.current.SetSelectedGameObject(null);
+
+        uIActions.Disable();
+        playerActions.Enable();
     }
 
     public void GetGem(RoomGem gem)
