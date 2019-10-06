@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
 
         leftItem = testItem1.SpawnItem(leftHand.transform);
         rightItem = testItem2.SpawnItem(rightHand.transform);
+
+
+        //GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
+        //GetComponent<PlayerInput>().enabled = false;
     }
 
     private void OnMove(InputValue value)

@@ -19,7 +19,7 @@ public class Room : MonoBehaviour
         Room otherRoom = map.CheckRoom(cell);
         if(!otherRoom)
         {
-            otherRoom = map.SpawnRoom(map.testRoom, cell);
+            otherRoom = map.SpawnRoom(door.Gem.roomPrefab, cell);
         }
         Door otherDoor;
         if (door == northDoor) { otherDoor = otherRoom.southDoor; }
@@ -29,7 +29,13 @@ public class Room : MonoBehaviour
         else { throw new System.InvalidOperationException(); }
 
         Destroy(otherDoor.gameObject);
-        Destroy(door.gameObject);
+        //Destroy(door.gameObject);
+    }
+
+    public Room CheckRoom(Direction dir)
+    {
+        var cell = map.Grid.WorldToCell(transform.position) + dir.ToVector();
+        return map.CheckRoom(cell);
     }
 
     public void EnterRoom()

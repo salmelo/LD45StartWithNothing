@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    public Room testRoom;
     public LayerMask checkLayerMask;
     public Cinemachine.CinemachineVirtualCamera camera1, camera2;
 

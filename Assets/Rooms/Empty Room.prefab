@@ -1426,6 +1426,11 @@ PrefabInstance:
       propertyPath: doorOpened.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1728445775226848111, guid: 6e52d66dbd1bc194bba48457326e5dc4,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1315016303}
     - target: {fileID: 1100534481563470729, guid: 6e52d66dbd1bc194bba48457326e5dc4,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1573,6 +1578,11 @@ PrefabInstance:
       propertyPath: doorOpened.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1728445775226848111, guid: 6e52d66dbd1bc194bba48457326e5dc4,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1315016303}
     - target: {fileID: 759321759868422614, guid: 6e52d66dbd1bc194bba48457326e5dc4,
         type: 3}
       propertyPath: m_Name
@@ -1685,6 +1695,11 @@ PrefabInstance:
       propertyPath: doorOpened.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1728445775226848111, guid: 6e52d66dbd1bc194bba48457326e5dc4,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1315016303}
     - target: {fileID: 1100534481563470729, guid: 6e52d66dbd1bc194bba48457326e5dc4,
         type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1832,6 +1847,11 @@ PrefabInstance:
       propertyPath: doorOpened.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1728445775226848111, guid: 6e52d66dbd1bc194bba48457326e5dc4,
+        type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 1315016303}
     - target: {fileID: 759321759868422614, guid: 6e52d66dbd1bc194bba48457326e5dc4,
         type: 3}
       propertyPath: m_Name
