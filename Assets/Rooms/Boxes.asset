@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26b71d7703c475041972dfaedb2b5378, type: 3}
-  m_Name: Skulls
+  m_Name: Boxes
   m_EditorClassIdentifier: 
-  color: {r: 0.8473325, g: 0.8773585, b: 0.7490655, a: 1}
-  roomPrefab: {fileID: 117271164297483329, guid: ab11b6f9f6988c340b4c7cde1e6e5e1c,
+  color: {r: 0.62352943, g: 0.5019608, b: 0.023529412, a: 1}
+  roomPrefab: {fileID: 5647943263402565362, guid: 5b4540a0069e9f3479a39a1fb1d75e69,
     type: 3}

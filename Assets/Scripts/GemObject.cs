@@ -6,6 +6,11 @@ public class GemObject : MonoBehaviour
 {
     public RoomGem gem;
 
+    private void Start()
+    {
+        GetComponent<SpriteRenderer>().color = gem.color;
+    }
+
     public void Pickup()
     {
         InventoryManager.current.GetGem(gem);
@@ -24,11 +29,11 @@ public class GemObject : MonoBehaviour
         return gem;
     }
 
-    private void OnValidate()
-    {
-        if (gem)
-        {
-            GetComponent<SpriteRenderer>().color = gem.color;
-        }
-    }
+    //private void OnValidate()
+    //{
+    //    if (gem)
+    //    {
+    //        GetComponent<SpriteRenderer>().color = gem.color;
+    //    }
+    //}
 }
